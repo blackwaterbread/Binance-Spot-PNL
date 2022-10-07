@@ -44,10 +44,10 @@ def generate_table() -> Table:
         style_pnl = 'bold green' if sign == '+' else 'bold red'
         table.add_row(
             Text(f"{key}"),
-            Text(f"{value['amount']} {value['pair0']}"),
-            Text(f"{value['last_price']} {value['pair1']}"),
-            Text(f"{value['avg_price']} {value['pair1']}"),
-            Text(f"{sign}{value['pnl']} {value['pair1']} ({sign}{value['pnl_percent']} %)", style=style_pnl),
+            Text(f"{value['amount']} {value['pair0']}", justify='right'),
+            Text(f"{value['last_price']} {value['pair1']}", justify='right'),
+            Text(f"{value['avg_price']} {value['pair1']}", justify='right'),
+            Text(f"{sign}{value['pnl']} {value['pair1']} ({sign}{value['pnl_percent']} %)", style=style_pnl, justify='right'),
         )
 
     return table
